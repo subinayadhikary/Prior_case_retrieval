@@ -1,1 +1,1 @@
-# Prior_case_retrieval
+# Pairwise legal documents similarity
