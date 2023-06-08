@@ -6,8 +6,6 @@ from numpy.linalg import norm
 import math
 from collections import Counter
 from sklearn.metrics import jaccard_score
-NN1=[]
-NN2=[]
 ## annotated information of 200 documents 
 json_data=open("/home/subinay/Documents/data/sentence_tag/search_file_new_2.json") 
 jdata = json.load(json_data)
@@ -62,13 +60,6 @@ def doc_sim(docid1,docid2): # compute similarity b/w two documents using cosine 
     score_section=jaccard_score(doc1_embedding,doc2_embedding)
     score=0.4*float(score_tf_idf)+0.6*float(score_section)
     return score 
-# def doc_sim(docid1,docid2):
-#     score=0
-#     doc1_embedding=embedding[docid1]
-#     doc2_embedding=embedding[docid2]
-#     score=jaccard_score(doc1_embedding,doc2_embedding)
-#     return score
-
 
 def sim_nn_docs(did1,did2): ## compute similarity b/w two Nearest neighbours documents
     #print(did1,did2)
@@ -128,9 +119,3 @@ def sim_test_docs():
             sim_score=document_sim(test_docs[i],test_docs[j])
             print(test_docs[i],test_docs[j],"   ",sim_score)
 sim_test_docs()
-#print(NN1)
-#print(NN2)
-
-
-            
-
